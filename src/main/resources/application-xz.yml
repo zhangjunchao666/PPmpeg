@@ -1,0 +1,49 @@
+server:
+  port: 18889
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: oracle.jdbc.OracleDriver
+    #driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:oracle:thin:@192.168.10.113:1521:orcl
+    #url: jdbc:mysql://localhost:3306/huran?characterEncoding=utf8
+    username: XZ_LWJC_DEV
+    #username: root
+    #password: SPrBxe3dQjE1zjD4TFjcNpXU6891NR8eM9pBlaiKmLM6CMaGTW08EMUnKAfmOs2ZQxUFo0YgxGlUtiQcvt3gyg==
+    password: root
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+config:
+  decrypt:
+    key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAK+Ox5iw7lZrZSBgIpjELzN9cIoR9T1Qaz0azNoSIHGJZSLp5WRkHI5TA+pOy3sQkK8FLjIhmNO7dVoC3P9gqMkCAwEAAQ==
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.hk.domain
+jackson:
+  serialization: true
+#新郑的配置
+hk:
+  secret: 71c31d3c9a5e4fd1bce9fb6e9efa0070
+  appkey: 37f40428
+  httpUrl: http://10.141.6.187:80
+  opUserUuid: 5b2eb534696b11e89c2e438f92627767
+  netZoneUuid: a456954df0434e398d5e1b5a5a624ae7
+logging:
+  level: com.hndfsj=debug
+  config: classpath:logback-boot.xml

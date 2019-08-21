@@ -1,0 +1,53 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    #driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/lwyxjc?characterEncoding=UTF-8&useUnicode=true
+    #url: jdbc:mysql://localhost:3306/huran?characterEncoding=utf8
+    username: root
+    password: bNVOqb7WKLX5Bjnw+LMv92taj25KOxDimXxILPQjw42wgv+1lHzOH8kr97xDwWdhpY67QuYCS7sWN4W46YbkFA==
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.hk.domain
+jackson:
+  serialization: true
+logging:
+  level: com.hndfsj=debug
+  config: classpath:logback-boot.xml
+#新郑的配置
+hk:
+  secret: 71c31d3c9a5e4fd1bce9fb6e9efa0070
+  appkey: 37f40428
+  httpUrl: http://10.141.6.187:80
+  opUserUuid: 5b2eb534696b11e89c2e438f92627767
+  netZoneUuid: a456954df0434e398d5e1b5a5a624ae7
+#系统ffmpeg.exe存放的文件夹
+#漯周界的配置
+ffmpeg:
+  url:
+    directory: D:\ffmpeg\bin
+    ffmpegExe: ffmpeg.exe
+    meu8OutDirectory: D:/lwyxjc-server/hls/
+  command:
+    var1: -i
