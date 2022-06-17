@@ -27,7 +27,7 @@
         <commons-io.version>2.4</commons-io.version>
         <httpclient.version>4.3.2</httpclient.version>
         <oracle.version>11.2.0.3</oracle.version>
-        <fastjson.version>1.2.29</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
     </properties>
 
     <dependencies>
